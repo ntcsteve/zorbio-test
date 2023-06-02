@@ -19,6 +19,9 @@ let url             = require('url');
 let validUrl        = require('valid-url');
 let uuid            = require('node-uuid');
 
+const newrelic = require('newrelic');
+newrelic.instrumentLoadedModule( 'express', express);
+
 // Patch console.x methods in order to add timestamp information
 require('console-stamp')(console, { pattern: 'mm/dd/yyyy HH:MM:ss.l' });
 
